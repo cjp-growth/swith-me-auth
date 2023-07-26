@@ -5,6 +5,8 @@ import com.swithmeauth.common.BaseInformation;
 import jakarta.persistence.*;
 import lombok.Getter;
 
+import java.time.LocalDate;
+
 @Getter
 @Entity(name = "user")
 public class User extends BaseEntity {
@@ -35,10 +37,10 @@ public class User extends BaseEntity {
     private String contact;
 
     @Column(name = "birth", nullable = false, length = 10)
-    private String birth;
+    private LocalDate birth;
 
-    @Column(name = "gender", nullable = false, length = 1)
-    private String gender;
+    @Enumerated(EnumType.STRING)
+    private Gender gender;
 
     @Column(name = "device_id", length = 32)
     private String deviceId;
@@ -46,7 +48,7 @@ public class User extends BaseEntity {
     @Column(name = "address_detail", length = 50)
     private String addressDetail;
 
-    @Column(name = "districtId")
+    @Column(name = "district_id")
     private Long districtId;
 
     @Embedded
@@ -63,8 +65,8 @@ public class User extends BaseEntity {
             String nickName,
             String email,
             String contact,
-            String birth,
-            String gender,
+            LocalDate birth,
+            Gender gender,
             String deviceId,
             String addressDetail,
             Long districtId,
