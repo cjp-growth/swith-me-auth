@@ -1,0 +1,21 @@
+CREATE TABLE user
+(
+    id                  BIGINT AUTO_INCREMENT PRIMARY KEY   NOT NULL,
+    user_id             BIGINT                              NOT NULL COMMENT '사용자 PK',
+    password            VARCHAR(20)                         NOT NULL COMMENT '비밀번호',
+    login_id            VARCHAR(20)                         NOT NULL COMMENT '사용자 로그인 ID',
+    name                VARCHAR(30)                         NOT NULL COMMENT '사용자 이름',
+    nick_name           VARCHAR(10)                         NOT NULL COMMENT '닉네임',
+    email               VARCHAR(100)                        NOT NULL COMMENT '이메일',
+    contact             VARCHAR(12)                         NOT NULL COMMENT '연락처',
+    birth               VARCHAR(10)                         NOT NULL COMMENT '생일',
+    gender              VARCHAR(1)                          NOT NULL COMMENT '성별',
+    device_id           VARCHAR(32)                         NOT NULL COMMENT '장비 PK',
+    address_detail      VARCHAR(50)                         NULL     COMMENT '상세 주소',
+    district_id         BIGINT                              NULL     COMMENT '주소 PK',
+    created_by          BIGINT                              NOT NULL COMMENT '생성자',
+    create_at           DATETIME(6)                         NOT NULL COMMENT '생성일',
+    last_modified_by    BIGINT                              NULL     COMMENT '최종 수정자',
+    last_modified_at    DATETIME(6)                         NULL     COMMENT '최종 수정일',
+    deleted             BIT                                 NOT NULL COMMENT '삭제 유무',
+) ENGINE=InnoDB COMMENT '사용자';
