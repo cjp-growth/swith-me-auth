@@ -153,11 +153,11 @@ public class District extends BaseEntity {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) {
+    public boolean equals(Object object) {
+        if (this == object) {
             return true;
         }
-        if (!(o instanceof District district)) {
+        if (!(object instanceof District district)) {
             return false;
         }
         return getId().equals(district.getId());
