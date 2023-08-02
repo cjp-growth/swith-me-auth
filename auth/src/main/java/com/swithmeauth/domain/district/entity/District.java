@@ -14,17 +14,17 @@ public class District extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "build_name", length = 70)
-    private String buildName;
+    @Column(name = "building_name", length = 70)
+    private String buildingName;
 
-    @Column(name = "build_no1", length = 5)
-    private String buildNo1;
+    @Column(name = "building_no1", length = 5)
+    private String buildingNo1;
 
-    @Column(name = "build_no2", length = 4)
-    private String buildNo2;
+    @Column(name = "building_no2", length = 4)
+    private String buildingNo2;
 
-    @Column(name = "build_num", length = 25)
-    private String buildNum;
+    @Column(name = "building_num", length = 25)
+    private String buildingNum;
 
     @Column(name = "dong", length = 20)
     private String dong;
@@ -96,10 +96,10 @@ public class District extends BaseEntity {
     }
 
     public District(Long id,
-        String buildName,
-        String buildNo1,
-        String buildNo2,
-        String buildNum,
+        String buildingName,
+        String buildingNo1,
+        String buildingNo2,
+        String buildingNum,
         String dong,
         String dongCode,
         String dongHj,
@@ -124,10 +124,10 @@ public class District extends BaseEntity {
         String zipcodeSeq
     ) {
         this.id = id;
-        this.buildName = buildName;
-        this.buildNo1 = buildNo1;
-        this.buildNo2 = buildNo2;
-        this.buildNum = buildNum;
+        this.buildingName = buildingName;
+        this.buildingNo1 = buildingNo1;
+        this.buildingNo2 = buildingNo2;
+        this.buildingNum = buildingNum;
         this.dong = dong;
         this.dongCode = dongCode;
         this.dongHj = dongHj;
