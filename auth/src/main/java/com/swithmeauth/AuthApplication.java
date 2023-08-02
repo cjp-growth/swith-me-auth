@@ -1,4 +1,4 @@
-package com.swithmeauth.auth;
+package com.swithmeauth;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

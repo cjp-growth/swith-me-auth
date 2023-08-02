@@ -1,4 +1,4 @@
-package com.swithmeauth.auth.entity;
+package com.swithmeauth.domain.auth.entity;
 
 import lombok.Getter;
 

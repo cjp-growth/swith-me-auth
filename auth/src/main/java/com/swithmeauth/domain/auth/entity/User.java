@@ -1,4 +1,4 @@
-package com.swithmeauth.auth.entity;
+package com.swithmeauth.domain.auth.entity;
 
 import com.swithmeauth.common.BaseEntity;
 import com.swithmeauth.common.BaseInformation;
@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 @Getter
 @Entity(name = "user")
@@ -18,7 +19,7 @@ public class User extends BaseEntity {
     @Column(name = "user_id", nullable = false)
     private Long userId;
 
-    @Column(name = "password", nullable = false, length = 20)
+    @Column(name = "password", length = 20)
     private String password;
 
     @Column(name = "login_id", nullable = false, length = 20)
@@ -85,5 +86,26 @@ public class User extends BaseEntity {
         this.addressDetail = addressDetail;
         this.districtId = districtId;
         this.baseInformation = baseInformation;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof User user)) {
+            return false;
+        }
+        return getId().equals(user.getId());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    @Override
+    public String toString() {
+        return id.toString();
     }
 }
