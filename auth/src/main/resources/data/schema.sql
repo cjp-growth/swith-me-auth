@@ -18,4 +18,39 @@ CREATE TABLE user
     last_modified_by    BIGINT                              NULL     COMMENT '최종 수정자',
     last_modified_at    DATETIME(6)                         NULL     COMMENT '최종 수정일',
     deleted             BIT                                 NOT NULL COMMENT '삭제 유무',
-) ENGINE=InnoDB COMMENT '사용자';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT '사용자';
+
+
+CREATE TABLE district
+(
+    id                  BIGINT AUTO_INCREMENT PRIMARY KEY   NOT NULL,
+    build_name          VARCHAR(70)                         NULL     COMMENT '시군구용 건물명',
+    build_no1           VARCHAR(5)                          NULL     COMMENT '건물 번호 본번',
+    build_no2           VARCHAR(4)                          NULL     COMMENT '건물 번호 부번',
+    build_num           VARCHAR(25)                         NULL     COMMENT '건물 관리 번호',
+    dong                VARCHAR(20)                         NULL     COMMENT '법정동명',
+    dong_code           VARCHAR(10)                         NULL     COMMENT '법정동 코드',
+    dong_hj             VARCHAR(30)                         NULL     COMMENT '행정동명',
+    doro                VARCHAR(40)                         NULL     COMMENT '도로명',
+    doro_code           VARCHAR(12)                         NULL     COMMENT '도로명 코드',
+    doro_en             VARCHAR(50)                         NULL     COMMENT '도로명 영문',
+    eupmyun             VARCHAR(20)                         NULL     COMMENT '읍면',
+    eupmyun_en          VARCHAR(25)                         NULL     COMMENT '읍면 영문',
+    eupmyundong_no      VARCHAR(2)                          NULL     COMMENT '읍면동 일련번호',
+    jibun1              VARCHAR(4)                          NULL     COMMENT '지번 본번',
+    jibun2              VARCHAR(4)                          NULL     COMMENT '지번 부번',
+    mount_yn            VARCHAR(1)                          NULL     COMMENT '산여부',
+    multiple            VARCHAR(1)                          NULL     COMMENT '다량 배달처명',
+    ri                  VARCHAR(20)                         NULL     COMMENT '리명',
+    sido                VARCHAR(25)                         NULL     COMMENT '시도',
+    sido_en             VARCHAR(20)                         NULL     COMMENT '시도 영문',
+    sigungu             VARCHAR(30)                         NULL     COMMENT '시군구',
+    sigungu_en          VARCHAR(30)                         NULL     COMMENT '시군구 영문',
+    under_yn            VARCHAR(1)                          NULL     COMMENT '지하 여부',
+    zipcode             VARCHAR(5)                          NULL     COMMENT '우편번호',
+    zipcode_old         VARCHAR(7)                          NULL     COMMENT '구 우편번호',
+    zipcode_seq         VARCHAR(3)                          NULL     COMMENT '우편번호 일련번호',
+    create_at           DATETIME(6)                         NOT NULL COMMENT '생성일자',
+    last_modified_at    DATETIME(6)                         NULL     COMMENT '마지막 수정일자',
+    PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT '주소';

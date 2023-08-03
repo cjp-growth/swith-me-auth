@@ -1,6 +1,6 @@
-package com.swithmeauth.auth.infrastructure;
+package com.swithmeauth.domain.auth.repository;
 
-import com.swithmeauth.auth.entity.User;
+import com.swithmeauth.domain.auth.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserJpaRepository extends JpaRepository<User, Long> {
