@@ -1,4 +1,4 @@
-package com.swithmeauth.web.district;
+package project.swithme.auth.web.district;
 
 import org.apache.poi.openxml4j.opc.OPCPackage;
 import org.apache.poi.xssf.eventusermodel.ReadOnlySharedStringsTable;
@@ -15,10 +15,6 @@ import org.xml.sax.XMLReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.temporal.ChronoUnit;
-import java.util.List;
 
 public class ExcelReadUtils {
 
@@ -26,7 +22,7 @@ public class ExcelReadUtils {
     }
 
     public static SheetHandler readFileByExcel(String excelFileName) {
-        File excelFile = null;
+        File excelFile;
         try {
             excelFile = ResourceUtils.getFile("classpath:docs/" + excelFileName +".xlsx");
         } catch (FileNotFoundException e) {
