@@ -1,4 +1,4 @@
-package com.swithmeauth.common;
+package project.swithme.auth.domain.common;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;

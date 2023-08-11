@@ -1,7 +1,7 @@
-package com.swithmeauth.domain.auth.entity;
+package project.swithme.auth.domain.auth.entity;
 
-import com.swithmeauth.common.BaseEntity;
-import com.swithmeauth.common.BaseInformation;
+import project.swithme.auth.domain.common.BaseEntity;
+import project.swithme.auth.domain.common.BaseInformation;
 import jakarta.persistence.*;
 import lombok.Getter;
 
