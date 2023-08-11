@@ -9,9 +9,9 @@ import java.util.List;
 
 public class SheetHandler implements XSSFSheetXMLHandler.SheetContentsHandler {
 
-    private List<List<String>> rows = new ArrayList<>();
+    private final List<List<String>> rows = new ArrayList<>();
 
-    private List<String> row = new ArrayList<>();
+    private final List<String> row = new ArrayList<>();
 
     private List<String> header = new ArrayList<>();
 
@@ -34,14 +34,14 @@ public class SheetHandler implements XSSFSheetXMLHandler.SheetContentsHandler {
 
     public void endRow(int rowNum) {
         if(rowNum ==0) {
-            header = new ArrayList(row);
+            header = new ArrayList<>(row);
             row.clear();
             return;
         }
-        for (int i = row.size(); i < header.size(); i++) {
+        for (int number = row.size(); number < header.size(); number++) {
             row.add("");
         }
-        rows.add(new ArrayList(row));
+        rows.add(new ArrayList<>(row));
         row.clear();
     }
 
@@ -49,7 +49,7 @@ public class SheetHandler implements XSSFSheetXMLHandler.SheetContentsHandler {
         int iCol = (new CellReference(cellName)).getCol();
         int emptyCol = iCol - currentCol - 1;
 
-        for(int i = 0 ; i < emptyCol ; i++) {
+        for(int number = 0 ; number < emptyCol ; number++) {
             row.add("");
         }
         currentCol = iCol;
