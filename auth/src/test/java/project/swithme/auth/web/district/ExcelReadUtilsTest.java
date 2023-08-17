@@ -13,11 +13,10 @@ import java.util.regex.Pattern;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@DisplayName("엑셀 파일 읽기 테스트")
+@DisplayName("[UnitTest] 엑셀 파일 읽기 테스트")
 class ExcelReadUtilsTest {
 
     private final static SheetHandler excelHandler = ExcelReadUtils.readFileByExcel("testReadExcelData");
-
 
     @Test
     @DisplayName("파일을 못읽어 오면 에러가 발생한다.")
