@@ -16,4 +16,8 @@ public class DistrictService {
     public List<District> saveAll(List<District> districtList) {
         return districtJpaRepository.saveAll(districtList);
     }
+
+    public List<District> findAll() {
+        return districtJpaRepository.findAll();
+    }
 }
