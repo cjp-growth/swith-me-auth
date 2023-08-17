@@ -1,5 +1,6 @@
 package project.swithme.auth.web.district.service;
 
+import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import project.swithme.auth.domain.district.entity.District;
@@ -17,7 +18,7 @@ public class DistrictSaveService {
 
     private final DistrictService districtService;
 
-    public List<District> saveSiGunGu() {
+    public List<District> saveDistrictsByExcel() {
         Set<District> hashSet = getDistrictsByExcel();
         return districtService.saveAll((hashSet.stream().toList()));
     }
@@ -26,9 +27,11 @@ public class DistrictSaveService {
         SheetHandler sheetHandler = ExcelReadUtils.readFileByExcel("전국시군구");
         Set<District> hashSet = new HashSet<>();
         for (List<String> row : sheetHandler.getRows()) {
+            if (row.get(3).equals("")) {
+                continue;
+            }
             hashSet.add(new District(row.get(3), row.get(2)));
         }
-        hashSet.remove("");
         return hashSet;
     }
 
