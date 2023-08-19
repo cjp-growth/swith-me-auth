@@ -13,11 +13,10 @@ import java.util.regex.Pattern;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@DisplayName("엑셀 파일 읽기 테스트")
+@DisplayName("[UnitTest] 엑셀 파일 읽기 테스트")
 class ExcelReadUtilsTest {
 
     private final static SheetHandler excelHandler = ExcelReadUtils.readFileByExcel("testReadExcelData");
-
 
     @Test
     @DisplayName("파일을 못읽어 오면 에러가 발생한다.")
@@ -27,8 +26,8 @@ class ExcelReadUtilsTest {
             .hasMessage("해당 이름의 엑셀 파일을 찾을 수 없습니다.");
     }
 
-    @DisplayName("엑셀 헤더를 검증한다.")
     @ParameterizedTest
+    @DisplayName("엑셀 헤더를 검증한다.")
     @ValueSource(strings = {"우편번호", "시도", "시도영문", "시군구", "시군구영문", "법정동명", "행정동명"})
     void excelHeaderValidate(String headerName, TestInfo testInfo) {
         assertEquals(headerName, excelHandler.getHeader().get(isNumber(testInfo)));
