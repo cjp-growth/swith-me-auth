@@ -12,6 +12,8 @@ import java.util.Comparator;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static project.swithme.auth.common.fixture.district.DistrictFixture.sadangDistrict;
+import static project.swithme.auth.common.fixture.district.DistrictFixture.sillimDistrict;
 
 @SpringBootTest
 @DisplayName("[UnitTest] 주소 서비스 테스트")
@@ -25,8 +27,8 @@ class DistrictServiceTest {
     @Transactional
     void saveAll() {
         List<District> districtList = new ArrayList<>();
-        districtList.add(new District("사당동", "서울특별시"));
-        districtList.add(new District("신림동", "서울특별시"));
+        districtList.add(sadangDistrict);
+        districtList.add(sillimDistrict);
 
         List<District> saveList = districtService.saveAll(districtList);
 
@@ -38,8 +40,8 @@ class DistrictServiceTest {
     @Transactional
     void findAll() {
         List<District> districtList = new ArrayList<>();
-        districtList.add(new District("사당동", "서울특별시"));
-        districtList.add(new District("신림동", "서울특별시"));
+        districtList.add(sadangDistrict);
+        districtList.add(sillimDistrict);
 
         List<District> saveDistrictList = districtService.saveAll(districtList).stream()
             .sorted(Comparator.comparing(District::getDong))
